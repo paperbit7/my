@@ -23,15 +23,6 @@
 - 🎯 스크롤 기반 패럴랙스 효과
 - 💬 실시간 이메일 연동
 
-## 🎮 참고 프로젝트
-- **Animal World**: Three.js 기반 3D 온라인 채팅 게임
-- Socket.IO 실시간 멀티플레이어
-- Ammo.js 물리 엔진과 Raycasting 충돌 감지
-
-## 🌐 배포 링크
-- **GitHub Pages**: https://paperbit7.github.io/my
-- **GitHub Repository**: https://github.com/paperbit7/my
-
 ## 📧 연락처
 - **이메일**: paperbit7@gmail.com
 - **GitHub**: https://github.com/paperbit7
