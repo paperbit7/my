@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    color: #e0e0e0;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+  }
+  
+  .neon-border {
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  
+  .cyber-card {
+    @apply bg-gray-900/50 backdrop-blur-md border border-cyan-500/20 rounded-xl;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  }
+  
+  .cyber-button {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold px-6 py-3 rounded-lg;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .cyber-button:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .cyber-bg {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(0, 0, 255, 0.1) 0%, transparent 50%);
+  }
+  
+  .scan-line {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    animation: scan 2s linear infinite;
+  }
+  
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+  
+  .glitch {
+    position: relative;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch::before {
+    animation: glitch-1 2s infinite linear alternate-reverse;
+    color: #ff0000;
+    z-index: -1;
+  }
+  
+  .glitch::after {
+    animation: glitch-2 3s infinite linear alternate-reverse;
+    color: #00ffff;
+    z-index: -2;
+  }
+  
+  @keyframes glitch-1 {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+  
+  @keyframes glitch-2 {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .cyber-font {
+    font-family: 'Orbitron', monospace;
+  }
+}
